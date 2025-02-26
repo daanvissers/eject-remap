@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BE436A772D6F8F15003D4673 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE436A762D6F8F15003D4673 /* IOKit.framework */; };
+		BE436A792D6F8F1F003D4673 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE436A782D6F8F1F003D4673 /* CoreFoundation.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		BE436A692D6F8D95003D4673 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		BE436A6B2D6F8D95003D4673 /* Eject Remap */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Eject Remap"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE436A762D6F8F15003D4673 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		BE436A782D6F8F1F003D4673 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE436A792D6F8F1F003D4673 /* CoreFoundation.framework in Frameworks */,
+				BE436A772D6F8F15003D4673 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				BE436A6D2D6F8D95003D4673 /* Eject Remap */,
+				BE436A752D6F8F15003D4673 /* Frameworks */,
 				BE436A6C2D6F8D95003D4673 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +65,15 @@
 				BE436A6B2D6F8D95003D4673 /* Eject Remap */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BE436A752D6F8F15003D4673 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE436A782D6F8F1F003D4673 /* CoreFoundation.framework */,
+				BE436A762D6F8F15003D4673 /* IOKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +152,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++23";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -194,7 +213,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++23";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -247,6 +266,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9G36XQC7C6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					IOKit,
+					"-framework",
+					CoreFoundation,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -257,6 +282,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9G36XQC7C6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					IOKit,
+					"-framework",
+					CoreFoundation,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
